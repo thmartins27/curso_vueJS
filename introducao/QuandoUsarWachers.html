@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>Nome: {{nomeCompleto}}</p>
+        <button @click="alterarNome">Alterar nomes</button>
+    </div>
+    <script>
+        /*
+            watch deve ser usando para processar dados assincronos
+        */
+        new Vue({
+            el: '#app',
+            data: {
+                nomeCompleto: 'Thiago Martins'
+            },
+            watch: {
+                nomeCompleto: function (novoNomeCompleto, antigoNomeCompleto) {
+                    let vm = this
+                    setTimeout(function() {
+                        vm.nomeCompleto = 'Nome resertado'
+                    }, 3000)
+                }
+            },
+            methods: {
+                alterarNome: function (event) {
+                    this.nomeCompleto = 'Martins Thiago'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

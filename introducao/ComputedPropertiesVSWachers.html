@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <p>Nome: {{nomeCompleto}}</p>
+        <button @click="alterarNomes">Alterar nomes</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                primeiroNome: 'Thiago',
+                ultimoNome: 'Martins',
+                //nomeCompleto: 'Thiago Martins'
+            },
+            /*watch: {
+                primeiroNome: function (novoPrimeiroNome, antigoPrimeiroNome) {
+                    this.nomeCompleto = novoPrimeiroNome + ' ' + this.ultimoNome
+                },
+                ultimoNome: function (novoUltimoNome, antigoUltimoNome) {
+                    this.nomeCompleto = this.primeiroNome + ' ' + novoUltimoNome
+                }
+            },*/
+            computed: {
+                nomeCompleto: function () {
+                    return this.primeiroNome + ' ' + this.ultimoNome
+                }
+            },
+            methods: {
+                alterarNomes: function () {
+                    this.primeiroNome = 'Martins'
+                    this.ultimoNome = 'Thiago'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

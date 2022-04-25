@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <p>Meu nome é: {{nome}}</p>
+        <input type="text" v-on:input="mudarNome">
+    </div>
+
+    <!--Script VueJS-->
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Bem vindo ao VueJS!',
+                nome: ''
+            },
+            methods: {
+                mudarNome: function (event) {
+                    this.nome = event.target.value
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <ul>
+            <li v-for="i in cap">{{i.aula}}: <a v-bind:href="i.path">{{i.nome}}</a></li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cap: [
+                    {
+                        aula: 11,
+                        path: './introducao/ObejectEvent.html',
+                        nome: 'Entendendo o Objeto evento'
+                    },
+                    {
+                        aula: 12,
+                        path: './introducao/PassandoArgumentos.html',
+                        nome: 'Passando seus próprios argumentos junto om o evento'
+                    },
+                    {
+                        aula: 13,
+                        path: './introducao/ModificadoresDeEvento.html',
+                        nome: 'Usando modificadores de eventos'
+                    },
+                    {
+                        aula: 14,
+                        path: './introducao/ModificadoresDeTecladoETecla.html',
+                        nome: 'Trabalhando com eventos do teclado e modificadores de tecla'
+                    },
+                    {
+                        aula: 15,
+                        path: './introducao/ModificadoresDeEventoMouse.html',
+                        nome: 'Modificando eventos do mouse'
+                    },
+                    {
+                        aula: 16,
+                        path: './introducao/Atalhos.html',
+                        nome: 'Atalhos para property e event binding'
+                    },
+                    {
+                        aula: 17,
+                        path: './introducao/ComputedProperties.html',
+                        nome: 'Trabalhando com computed properties'
+                    },
+                    {
+                        aula: 18,
+                        path: './introducao/ComputedPropertiesVSMethods.html',
+                        nome: 'Computed properties VS Methods'
+                    },
+                    {
+                        aula: 19,
+                        path: './introducao/ComputedPropertiesVSWachers.html',
+                        nome: 'Computed properties VS Watchers'
+                    },
+                    {
+                        aula: 20,
+                        path: './introducao/QuandoUsarWachers.html',
+                        nome: 'Quando usar Watchers'
+                    },
+                    {
+                        aula: 21,
+                        path: './introducao/getterESetter.html',
+                        nome: 'Computed Properties getter e setter'
+                    }
+                ]
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

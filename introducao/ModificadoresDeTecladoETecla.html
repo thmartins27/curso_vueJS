@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input v-on:keyup="onKey" placeholder="Qualquer Tecla"><br>
+        <!--Escuta somente a tecla solicitada-->
+        <input v-on:keyup.enter="onKey" placeholder="Tecla Enter"><br>
+        <!-- Executa um ou outra tecla -->
+        <input v-on:keyup.enter.esc="onKey" placeholder="Tecla Enter ou Esc"><br>
+        <!--Modidicador automatico-->
+        <input v-on:keyup.arrow-up="onKey" placeholder="Tecla seta para cima">
+        <!--Tecla meta (ctrl, shift, alt) deve ser usada junto com outra tecla--><br>
+        <input v-on:keyup.ctrl.enter="onKey" placeholder="Tecla ctrl + enter"><br>
+        <!--Executa exatamente o comando de tecla-->
+        <input v-on:keyup.ctrl.enter.exact="onKey" placeholder="Tecla ctrl + enter (exact)">
+    </div>
+    <script>
+
+        new Vue({
+            el: '#app',
+            methods: {
+                onKey: function (event) {
+                    console.log('Tecla ' + event.key + ' Precionada')
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
